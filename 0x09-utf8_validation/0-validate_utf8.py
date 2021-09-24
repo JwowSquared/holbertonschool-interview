@@ -8,7 +8,7 @@ def validUTF8(data):
     for i in data:
         i = i & 255
         if cont > 0:
-            if i & 128 == 0 or i & 64 == 1:
+            if i & 128 == 0 or i & 64 == 64:
                 return False
             cont = cont - 1
             continue
