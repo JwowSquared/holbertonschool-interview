@@ -20,7 +20,7 @@ def validUTF8(data):
         while temp & 128:
             cont = cont + 1
             temp = temp << 1
-        if cont == 0:
+        if cont == 0 or cont > 3:
             return False
     if cont > 0:
         return False
