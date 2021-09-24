@@ -8,12 +8,10 @@ def validUTF8(data):
     for i in data:
         i = i & 255
         if cont > 0:
-            if i & 128 == 0:
+            if i & 128 == 0 or i & 64 == 1:
                 return False
             cont = cont - 1
             continue
-        if i == 0:
-            return False
         if i < 128:
             continue
         temp = i << 1
