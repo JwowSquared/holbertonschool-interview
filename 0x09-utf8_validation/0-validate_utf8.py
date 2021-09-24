@@ -16,7 +16,7 @@ def validUTF8(data):
             return False
         if i < 128:
             continue
-        temp = i
+        temp = i << 1
         while temp & 128:
             cont = cont + 1
             temp = temp << 1
