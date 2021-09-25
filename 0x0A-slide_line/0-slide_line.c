@@ -52,7 +52,8 @@ int slide_line_left(int *line, size_t size)
 					line[j] += line[i];
 					merged = 1;
 				}
-				line[i] = 0;
+				if (j + 1 != i || merged)
+					line[i] = 0;
 				break;
 			}
 			if (j == 0)
@@ -96,7 +97,8 @@ int slide_line_right(int *line, size_t size)
 					line[j] += line[i];
 					merged = 1;
 				}
-				line[i] = 0;
+				if (j - 1 != i || merged)
+					line[i] = 0;
 				break;
 			}
 			if (j == target - 1)
