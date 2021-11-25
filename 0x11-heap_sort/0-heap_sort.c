@@ -51,5 +51,6 @@ void true_heap_sort(int *a, size_t size, size_t full)
 	temp = a[0];
 	a[0] = a[size - 1];
 	a[size - 1] = temp;
+	print_array(a, full);
 	true_heap_sort(a, size - 1, full);
 }
