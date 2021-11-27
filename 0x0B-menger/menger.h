@@ -5,5 +5,6 @@
 #include <stdlib.h>
 
 void menger(int);
+void draw(int);
 
 #endif /* _MENGER_H_ */
