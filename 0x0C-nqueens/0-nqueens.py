@@ -11,7 +11,7 @@ def main():
     if not sys.argv[1].isnumeric():
         print("N must be a number")
         return 1
-    if sys.argv[1] < 4:
+    if int(sys.argv[1]) < 4:
         print("N must be at least 4")
         return 1
     print("poggers")
