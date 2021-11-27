@@ -46,6 +46,8 @@ void menger(int n, int size)
 {
 	int row, col, r, c, flag;
 
+	(void)n;
+
 	for (row = 0; row < size; row++)
 	{
 		for (col = 0; col < size; col++)
