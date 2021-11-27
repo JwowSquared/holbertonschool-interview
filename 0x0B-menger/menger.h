@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menger(int, int);
+void menger(int);
 
 #endif /* _MENGER_H_ */

@@ -32,21 +32,18 @@ int main(int ac, char **av)
 	for (i = 0; i < n; i++)
 		size *= 3;
 
-	menger(n, size);
+	menger(size);
 
 	return (0);
 }
 
 /**
 * menger - constructs a 2D menger square of size n
-* @n: size of menger square
 * @size: n value that menger was originally called with
 */
-void menger(int n, int size)
+void menger(int size)
 {
 	int row, col, r, c, flag;
-
-	(void)n;
 
 	for (row = 0; row < size; row++)
 	{
