@@ -9,26 +9,23 @@ def rain(walls):
 
     i = 0
     out = 0
+    pool = 0
     height = -1
     left_wall = -1
-    right_wall = -1
+    left_idx = -1
     while i < len(walls):
-        if walls[i] == 0:
-            i += 1
-            continue
-        if left_wall == -1:
-            left_wall = i
-            i += 1
-            continue
-        if right_wall == -1:
-            right_wall = i
-            if walls[left_wall] < walls[right_wall]:
-                height = walls[left_wall]
-            else:
-                height = walls[right_wall]
-            out += (height * (right_wall - left_wall - 1))
-            left_wall = right_wall
-            right_wall = -1
-            i += 1
-            continue
+        if left_wall <= walls[i]:
+            out += pool
+            pool = 0
+            left_wall = walls[i]
+            left_idx = i
+        else:
+            pool += left_wall - walls[i]
+        i += 1
+        if i >= len(walls) and pool > 0:
+            i = left_idx + 1
+            left_wall -= 1
+            if left_wall <= 0:
+                break
+            pool = 0
     return out
