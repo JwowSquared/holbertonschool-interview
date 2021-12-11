@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module contains count_words for 0x13-count_words"""
+"""this code is disgusting as to avoid loops. I am uncomfortable."""
 
 from collections import Counter
 import operator
