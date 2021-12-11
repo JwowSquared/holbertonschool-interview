@@ -18,11 +18,14 @@ def count_words(sub, matches, wlist=[], flag=0, display=[], after=""):
     headers = {'user-agent': 'Malicious Bot'}
     params = {'limit': '100', 'after': after}
     raw = requests.get(target, headers=headers, params=params)
+    if raw.status_code != 200:
+        return
     temp = [x['data']['title'].split() for x in raw.json()['data']['children']]
     words = [a.lower() for b in temp for a in b]
     wlist += words
     if len(raw.json()['data']['children']) < 100:
         counts = Counter(wlist)
+        matches = [x.lower() for x in matches]
         out = {key: counts[key] for key in matches}
         temp = sorted(out.items())
         s = sorted(temp, key=operator.itemgetter(1), reverse=True)
