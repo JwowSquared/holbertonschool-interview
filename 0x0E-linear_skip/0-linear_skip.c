@@ -35,6 +35,8 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			printf(p2, i, jump);
 			for (; i <= jump; i++)
 			{
+				if (current == NULL)
+					break;
 				printf(p1, i, current->n);
 				if (value == current->n)
 					return (current);
