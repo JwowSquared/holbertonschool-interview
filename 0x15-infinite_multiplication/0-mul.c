@@ -50,8 +50,6 @@ void inf_mul(char *a, char *b, int a_end, int b_end, int carry, int depth)
 {
 	int out = 0, a_off = 0, b_off = 0;
 
-	printf("DEBUG = |%d|%d|%d|%d|\n", a_end, b_end, carry, depth);
-
 	if (a_end + b_end < depth)
 	{
 		if (carry != 0)
@@ -66,13 +64,9 @@ void inf_mul(char *a, char *b, int a_end, int b_end, int carry, int depth)
 	else
 		a_off = a_end - depth;
 
-	printf("[%d][%d]\n", a_off, b_off);
-
 	while (a_off >= 0 && a_off <= a_end && b_off >= 0 && b_off <= b_end)
 	{
-		printf("multiplying %c and %c...\n", a[a_off], b[b_off]);
 		out += ((a[a_off] - 48) * (b[b_off] - 48));
-		printf("out is now %d.\n", out);
 		a_off++;
 		b_off--;
 	}
