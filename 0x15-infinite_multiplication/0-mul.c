@@ -48,7 +48,7 @@ int main(int ac, char **av)
 */
 void inf_mul(char *a, char *b, int a_end, int b_end, int carry, int depth)
 {
-	int out = 0, a_off = 0, b_off = 0;
+	int out = 0, a_off = 0, b_off = b_end;
 
 	if (a_end + b_end < depth)
 	{
@@ -60,7 +60,7 @@ void inf_mul(char *a, char *b, int a_end, int b_end, int carry, int depth)
 	out = carry;
 
 	if (a_end < depth)
-		b_off = depth - a_end;
+		b_off = b_end + a_end - depth;
 	else
 		a_off = a_end - depth;
 
