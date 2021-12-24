@@ -9,7 +9,8 @@
 */
 int main(int ac, char **av)
 {
-	int a_len, b_len;
+	char *a, *b;
+	int a_len, b_len, flag = 0;
 
 	if (ac != 3)
 	{
@@ -17,21 +18,34 @@ int main(int ac, char **av)
 		return (98);
 	}
 
-	for (a_len = 0; av[1][a_len] != '\0'; a_len++)
-		if (av[1][a_len] < '0' || av[1][a_len] > '9')
+	a = av[1];
+	b = av[2];
+	while (*a && *a == '0')
+		a++;
+	if (!*a)
+		flag = 1;
+	while (*b && *b == '0')
+		b++;
+	if (!*b)
+		flag = 1;
+
+	for (a_len = 0; a[a_len] != '\0'; a_len++)
+		if (a[a_len] < '0' || a[a_len] > '9')
 		{
 			printf("Error\n");
 			return (98);
 		}
 
-	for (b_len = 0; av[2][b_len] != '\0'; b_len++)
-		if (av[2][b_len] < '0' || av[2][b_len] > '9')
+	for (b_len = 0; b[b_len] != '\0'; b_len++)
+		if (b[b_len] < '0' || b[b_len] > '9')
 		{
 			printf("Error\n");
 			return (98);
 		}
-
-	inf_mul(av[1], av[2], a_len - 1, b_len - 1, 0, 0);
+	if (!flag)
+		inf_mul(a, b, a_len - 1, b_len - 1, 0, 0);
+	else
+		printf("0");
 	printf("\n");
 
 	return (0);
