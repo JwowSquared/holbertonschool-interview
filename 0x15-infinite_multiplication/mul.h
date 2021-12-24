@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void inf_mul(char *, char *, int, int);
+void inf_mul(char *, char *, int, int, int, int);
 
 #endif /* _MUL_H_ */
