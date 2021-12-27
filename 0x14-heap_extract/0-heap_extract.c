@@ -8,8 +8,8 @@
 */
 int heap_extract(heap_t **root)
 {
-	heap_t *current, *next;
-	int out;
+	heap_t *current;/*, *next;
+	int out;*/
 
 	if (root == NULL || *root == NULL)
 		return (0);
