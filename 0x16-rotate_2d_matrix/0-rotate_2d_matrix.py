@@ -9,7 +9,7 @@ def rotate_2d_matrix(matrix):
     temp = 0
     x = 0
     y = 0
-    while (high_bound - low_bound > 1):
+    while (high_bound - low_bound > 0):
         x = low_bound
         y = high_bound
         while (x < high_bound):
